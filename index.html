@@ -6,10 +6,30 @@
         <meta name="description" content="A weather app that uses location data to show accurate weather information with an attractive interface">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/default.css" type="text/css">
+        <script src="scripts/main.js"></script>
         <title>WeatherX</title>
     </head>
     <body>
         <h1 class="headings">WeatherX</h1>
-        
+        <br>
+        <div class="manualCoords">
+            <div class="LatitudeInput">
+                <label for="latBox">Latitude</label>
+                <input type="text" id="latBox" name="latBox">
+            </div>
+            <div class="longitudeInput">
+                <label for="lonBox">Longitude</label>
+                <input type="text" id="lonBox" name="lonBox">
+            </div>
+            <div class="submitCoords">
+                <button id="submitButton" onclick="handleSubmitClick()">Submit</button>
+                <button id="auto" onclick="setCoordinates()">Get coordinates from browser</button>
+            </div>
+            <label id="errorLabel"></label>
+        </div>
+        <div class="outputCoords">
+            <label id="latLabel"></label><br>
+            <label id="lonLabel"></label>
+        </div>
     </body>
 </html>
