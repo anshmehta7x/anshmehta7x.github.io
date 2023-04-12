@@ -6,30 +6,42 @@
         <meta name="description" content="A weather app that uses location data to show accurate weather information with an attractive interface">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/default.css" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+
         <script src="scripts/main.js"></script>
-        <title>WeatherX</title>
+        <title>Weather</title>
     </head>
     <body>
-        <h1 class="headings">WeatherX</h1>
-        <br>
-        <div class="manualCoords">
-            <div class="LatitudeInput">
-                <label for="latBox">Latitude</label>
-                <input type="text" id="latBox" name="latBox">
-            </div>
-            <div class="longitudeInput">
-                <label for="lonBox">Longitude</label>
-                <input type="text" id="lonBox" name="lonBox">
-            </div>
-            <div class="submitCoords">
-                <button id="submitButton" onclick="handleSubmitClick()">Submit</button>
-                <button id="auto" onclick="setCoordinates()">Get coordinates from browser</button>
-            </div>
-            <label id="errorLabel"></label>
+        <div class="navbar">
+            <a href="index.html">
+                <img src="images/transparenticon.png" id="CornerIcon">
+            </a>
+            <h1>Weather</h1>
         </div>
-        <div class="outputCoords">
-            <label id="latLabel"></label><br>
-            <label id="lonLabel"></label>
+        <div class="grid-container">
+            <div class="manualCoords">  
+                <p>Enter Coordinates:</p>
+                <div class="inputElements">
+                    <div class="inp">
+                        <label for="latInput" id="latLabel">Latitude</label>
+                        <p></p>
+                        <input type="text" id="latInput" name="latInput">
+                    </div>
+                    <div class="inp">
+                        <label for="lonInput" id="lonLabel">Longitude</label>
+                        <p></p>
+                        <input type="text" id="lonInput" name="lonInput">
+                    </div>
+                </div>
+            </div>
+            <div class="verticalLine"></div>
+            <div class="autoCoords">
+                <p><button class="btn">Get current location</button></p>
+            </div>
         </div>
+        
     </body>
 </html>
