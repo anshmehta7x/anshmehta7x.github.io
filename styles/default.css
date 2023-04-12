@@ -32,19 +32,27 @@ h1{
 }   
 
 .grid-container {
-    margin-top: 10%;
+    margin-top: 7%;
     color: white;
     display: grid;
     grid-template-columns: 2fr 70px 1fr;
     font-family:'Manrope', sans-serif;
-    font-size: 70px;
+    font-size: 60px;
     padding-left: 50px;
-    padding-top: 50px;
+}
+
+.manualCoords{
+    padding-top: 0px;
+}
+
+.autoCoords{
+    padding-top: 100px;
 }
 
 .verticalLine{
     border-left: 2px solid rgb(255, 255, 255);
-    height: 400px;
+    height: 450px;
+    margin-top: 100px;
 }
 
 .inputElements{
@@ -61,6 +69,7 @@ h1{
     color: #ffffff;
     border-style: solid;
     border-radius: 0px;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -77,4 +86,13 @@ h1{
     color:#393939;
   }
 
-  
+  .grid2{
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+  }
+
+  .errorOutput{
+    font-size: 30px;
+    color: #ff0000;
+    font-family: 'Roboto',sans-serif;
+  }

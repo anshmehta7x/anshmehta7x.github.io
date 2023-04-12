@@ -1,0 +1,40 @@
+body{
+    margin-top: 100px;
+    background-color: #393939;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #242424;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+
+#CornerIcon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 97px;
+    width: 97px;
+}
+
+#heading{
+    color:#01a7fc;
+    font-size: 70px;
+    margin-top: 20px;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
+}   
+
+.weatherResults{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}

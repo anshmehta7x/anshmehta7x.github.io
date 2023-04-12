@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
         <meta name="author" content="Ansh Mehta">
         <meta name="description" content="A weather app that uses location data to show accurate weather information with an attractive interface">
+        <title>Weather</title>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/default.css" type="text/css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
-
         <script src="scripts/main.js"></script>
-        <title>Weather</title>
     </head>
     <body>
+        <div class="container">
         <div class="navbar">
             <a href="index.html">
                 <img src="images/transparenticon.png" id="CornerIcon">
@@ -35,13 +35,23 @@
                         <p></p>
                         <input type="text" id="lonInput" name="lonInput">
                     </div>
+                <div class="grid2">
+                    <button class="btn" id="submitBtn" onclick=handleSubmitClick()>Submit</button>
+                    <div></div>
+
+                    <label id="errorLabel1" class="errorOutput"></label>
+                </div>
                 </div>
             </div>
             <div class="verticalLine"></div>
             <div class="autoCoords">
-                <p><button class="btn">Get current location</button></p>
+                <p><button class="btn" onclick=handleAutoClick()>Get current location</button></p>
+                
+                <div class="errorOutput">
+                    <label for="errorOutput" id="errorLabel2"></label>
+                </div>                
             </div>
         </div>
-        
+    </div>
     </body>
 </html>
