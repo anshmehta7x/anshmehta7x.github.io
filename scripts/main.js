@@ -41,10 +41,10 @@ function handleAutoClick(){
 }
 
 function getWeatherData(lat,lon){
-    const accessKey = 'b1811845a11ac779035d26e75bf40677';
+    const accessKey = '2154cbdd26d3416a93874652231304';
     const latitude = lat;
     const longitude = lon; 
-    const apiUrl = `http://api.weatherstack.com/current?access_key=${accessKey}&query=${latitude},${longitude}`;
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${accessKey}&q=${latitude},${longitude}`;
     console.log(apiUrl);
     fetch(apiUrl)
     .then(response => response.json())
@@ -88,7 +88,7 @@ function edit(data){
     const cssfile = document.createElement("link");
     cssfile.rel = "stylesheet";
     cssfile.type = "text/css";
-    switch(data.current.weather_descriptions[0].toLowerCase()){
+    switch(data.current.condition.text.toLowerCase()){
         case "sunny":
         case "clear":
             cssfile.href = "styles/sunny.css";
@@ -121,9 +121,9 @@ function edit(data){
     const lat = data.location.lat;
     const lon = data.location.lon;
     const localtime = data.location.localtime;
-    const temp = data.current.temperature;
-    const feelslike = data.current.feelslike;
-    const description = data.current.weather_descriptions[0];
+    const temp = data.current.temp_c;
+    const feelslike = data.current.feelslike_c;
+    const description = data.current.condition.text;
     
     const tempLabel = document.getElementById("realTempLabel");
     tempLabel.textContent = temp + "°C";
