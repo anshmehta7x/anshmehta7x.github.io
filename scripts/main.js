@@ -115,7 +115,6 @@ function edit(data){
             break;
     }
     
-
     const location = data.location.name;
     const country = data.location.country;
     const region = data.location.region;
@@ -125,10 +124,12 @@ function edit(data){
     const temp = data.current.temperature;
     const feelslike = data.current.feelslike;
     const description = data.current.weather_descriptions[0];
-
-    const loc = document.getElementById("location");
-    loc.textContent = location + ", " + region + ", " + country;
     
+    const tempLabel = document.getElementById("realTempLabel");
+    tempLabel.textContent = temp + "°C";
+
+    const feelslikeLabel = document.getElementById("feelslikeTempLabel");
+    feelslikeLabel.textContent = "Feels like: " + feelslike + "°C";
     document.head.appendChild(maincss);
     document.head.appendChild(cssfile);
 }

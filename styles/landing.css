@@ -31,10 +31,33 @@ body{
     text-align: center;
 }   
 
-.weatherResults{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.topgridLayout{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
+}
+
+#tempDisplay{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    
+}
+
+#realTemp{
+    font-size: 100px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 80px;
+    font-family: 'Manrope', sans-serif;
+}
+
+#feelsLike{
+    font-size: 40px;
+    color: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-family: 'Manrope', sans-serif;
+}
+.gridItem{
+    border: darkorange 0px solid;
 }

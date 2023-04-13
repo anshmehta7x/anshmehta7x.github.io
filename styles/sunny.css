@@ -1,0 +1,10 @@
+#descriptionImageHolder{
+    width: 350px;
+    height: 350px;
+    background-image:url(../images/sunny.png);
+    background-size: cover;
+}
+
+body{
+    background-image: url(../images/sunny_bg.png);
+}
