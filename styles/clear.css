@@ -3,12 +3,12 @@
     margin-left: 100px;
     width: 220px;
     height: 220px;
-    background-image:url(../images/cloudy.png);
+    background-image:url(../images/clear.png);
     background-size: cover;
 }
 
 body{
-    background-image: url(../images/cloudy_bg.jpg);
+    background-image: url(../images/clear_bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

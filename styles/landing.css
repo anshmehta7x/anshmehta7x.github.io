@@ -39,7 +39,7 @@ body{
 
 #tempDisplay{
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 3fr 1fr;
     
 }
 
@@ -52,12 +52,44 @@ body{
 }
 
 #feelsLike{
-    font-size: 40px;
+    font-size: 35px;
     color: #ffffff;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 40px;
     font-family: 'Manrope', sans-serif;
 }
+
+#weatherDescriptionLabel{
+    font-size: 70px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.location{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+
+}
+
+#locationIcon,#latlonIcon{
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20%;
+    height: 40px;
+    width: 40px;
+}
+
+#locationLabel,#latlonLabel{
+    padding-left: 10px;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
 .gridItem{
     border: darkorange 0px solid;
 }

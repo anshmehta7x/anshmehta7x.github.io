@@ -1,4 +1,3 @@
-
 function checkCoordValidity(lat,lon){
     if(lat <= 90 && lat >=-90 && lon<=180 && lon >= -180){
         return true;
@@ -6,6 +5,31 @@ function checkCoordValidity(lat,lon){
     else{
         return false;
     }
+}
+
+function coordString(lat,lon){
+
+    if(lat<0){
+        var la = lat*-1;
+        var la_s = la.toString();
+        la_s = la_s +" S";
+    }
+    else{
+        var la_s = lat.toString();
+        la_s = la_s +" N";
+    }
+
+    if(lon<0){
+        var lo = lon*-1;
+        var lo_s = lo.toString();
+        lo_s = lo_s +" W";
+    }
+    else{
+        var lo_s = lon.toString();
+        lo_s = lo_s +" E";
+    }
+    let retString = la_s + " , " + lo_s;
+    return retString;
 }
 
 function handleSubmitClick(){
@@ -88,33 +112,62 @@ function edit(data){
     const cssfile = document.createElement("link");
     cssfile.rel = "stylesheet";
     cssfile.type = "text/css";
-    switch(data.current.condition.text.toLowerCase()){
-        case "sunny":
-        case "clear":
-            cssfile.href = "styles/sunny.css";
-            break;
-        case "cloudy":
-        case "overcast":
-            cssfile.href = "styles/cloudy.css";
-            break;
-        case "mist":
-        case "fog":
-            cssfile.href = "styles/mist.css";
-            break;
-        case "thunderstorm":
-            cssfile.href = "styles/thunderstorm.css";
-            break;
-        case "rain":
-            cssfile.href = "styles/rain.css";
-            break;
-        case "snow":
-            cssfile.href = "styles/snow.css";
-            break;
-        default:
-            cssfile.href = "styles/def.css";
-            break;
-    }
-    
+    const desc = data.current.condition.text.toLowerCase();
+    const cssFiles = {
+        "sunny": "styles/sunny.css",
+        "clear": "styles/clear.css",
+        "partly cloudy": "styles/cloudy.css",
+        "cloudy": "styles/cloudy.css",
+        "overcast": "styles/cloudy.css",
+        "mist": "styles/mist.css",
+        "fog": "styles/mist.css",
+        "freezing fog": "styles/mist.css",
+        "thunderstorm": "styles/thunderstorm.css",
+        "thundery outbreaks possible": "styles/thunderstorm.css",
+        "patchy light rain with thunder": "styles/thunderstorm.css",
+        "moderate or heavy rain with thunder": "styles/thunderstorm.css",
+        "patchy light snow with thunder": "styles/thunderstorm.css",
+        "modern or heavy snow with thunder": "styles/thunderstorm.css",
+        "rain": "styles/rain.css",
+        "patchy rain possible": "styles/rain.css",
+        "patchy freezing drizzle possible": "styles/rain.css",
+        "patchy light drizzle": "styles/rain.css",
+        "light drizzle": "styles/rain.css",
+        "freezing drizzle": "styles/rain.css",
+        "heavy freezing drizzle": "styles/rain.css",
+        "patchy light rain": "styles/rain.css",
+        "light rain": "styles/rain.css",
+        "moderate rain at times": "styles/rain.css",
+        "moderate rain": "styles/rain.css",
+        "heavy rain at times": "styles/rain.css",
+        "heavy rain": "styles/rain.css",
+        "light freezing rain": "styles/rain.css",
+        "light rain shower": "styles/rain.css",
+        "moderate or heavy rain shower": "styles/rain.css",
+        "torrential rain shower": "styles/rain.css",
+        "light sleet showers": "styles/rain.css",
+        "moderate or heavy sleet showers": "styles/rain.css",
+        "moderate or heavy freezing rain": "styles/rain.css",
+        "light sleet": "styles/snow.css",
+        "moderate or heavy sleet": "styles/snow.css",
+        "patchy light snow": "styles/snow.css",
+        "light snow": "styles/snow.css",
+        "light snow showers": "styles/snow.css",
+        "moderate or heavy snow showers": "styles/snow.css",
+        "light showers of ice pellets": "styles/snow.css",
+        "patchy moderate snow": "styles/snow.css",
+        "moderate snow": "styles/snow.css",
+        "patchy heavy snow": "styles/snow.css",
+        "heavy snow": "styles/snow.css",
+        "ice pellets": "styles/snow.css",
+        "patchy snow possible": "styles/snow.css",
+        "blizzard": "styles/snow.css",
+        "blowing snow": "styles/snow.css",
+        "snow": "styles/snow.css",
+        "patchy sleet possible": "styles/snow.css",
+        "default": "styles/def.css"
+      };
+    cssfile.href = cssFiles[desc] || cssFiles["default"];
     const location = data.location.name;
     const country = data.location.country;
     const region = data.location.region;
@@ -130,6 +183,16 @@ function edit(data){
 
     const feelslikeLabel = document.getElementById("feelslikeTempLabel");
     feelslikeLabel.textContent = "Feels like: " + feelslike + "°C";
+
+    const descriptionLabel = document.getElementById("weatherDescription");
+    descriptionLabel.textContent = description;
+
+    const locationLabel = document.getElementById("locationLabel");
+    locationLabel.textContent = location + ", " + region + ", " + country;
+
+    const latlonLabel = document.getElementById("latlonLabel");
+    latlonLabel.textContent = coordString(lat,lon);
+
     document.head.appendChild(maincss);
     document.head.appendChild(cssfile);
 }
