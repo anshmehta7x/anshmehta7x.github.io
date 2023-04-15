@@ -74,7 +74,7 @@ body{
 
 }
 
-#locationIcon,#latlonIcon{
+#locationIcon,#latlonIcon,#clockIcon{
     align-items: center;
     margin-top: 10px;
     margin-left: 20%;
@@ -82,7 +82,7 @@ body{
     width: 40px;
 }
 
-#locationLabel,#latlonLabel{
+#locationLabel,#latlonLabel,#localTimeLabel{
     padding-left: 10px;
     font-size: 40px;
     color: #ffffff;

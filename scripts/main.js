@@ -193,6 +193,9 @@ function edit(data){
     const latlonLabel = document.getElementById("latlonLabel");
     latlonLabel.textContent = coordString(lat,lon);
 
+    const localTime = document.getElementById("localTimeLabel");
+    localTime.textContent = localtime;
+
     document.head.appendChild(maincss);
     document.head.appendChild(cssfile);
 }

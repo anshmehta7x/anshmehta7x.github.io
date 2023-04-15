@@ -1,0 +1,15 @@
+#descriptionImageHolder{
+    margin-top: 60px;
+    margin-left: 100px;
+    width: 220px;
+    height: 220px;
+    background-image:url(../images/storm.png);
+    background-size: cover;
+}
+
+body{
+    background-image: url(../images/storm_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
