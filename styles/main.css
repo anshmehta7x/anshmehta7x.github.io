@@ -1,0 +1,47 @@
+.headerContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.headerContainer img{
+    width: auto;
+    height: 10vh;
+}
+
+.headerText{
+    top:0;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Manrope', sans-serif;
+    font-size: 2vh;
+    color: #2a9ed2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pageButtons{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pageButtons img{
+    width: auto;
+    height: 5vh;
+    margin-left: 1vw;
+}
+
+.bodyContainer{
+    margin-top:10vh;
+}

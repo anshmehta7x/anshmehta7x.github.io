@@ -2,56 +2,37 @@
 <html lang="en-in">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Ansh Mehta">
         <meta name="description" content="A weather app that uses location data to show accurate weather information with an attractive interface">
         <title>Weather</title>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/default.css" type="text/css">
-
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
         <script src="scripts/main.js"></script>
     </head>
-    <body>
-        <div class="container">
-        <div class="navbar">
-            <a href="index.html">
-                <img src="images/transparenticon.png" id="CornerIcon">
-            </a>
-            <h1>Weather</h1>
-        </div>
-        <div class="grid-container">
-            <div class="manualCoords">  
-                <p>Enter Coordinates:</p>
-                <div class="inputElements">
-                    <div class="inp">
-                        <label for="latInput" id="latLabel">Latitude</label>
-                        <p></p>
-                        <input type="text" id="latInput" name="latInput">
-                    </div>
-                    <div class="inp">
-                        <label for="lonInput" id="lonLabel">Longitude</label>
-                        <p></p>
-                        <input type="text" id="lonInput" name="lonInput">
-                    </div>
-                <div class="grid2">
-                    <button class="btn" id="submitBtn" onclick=handleSubmitClick()>Submit</button>
-                    <div></div>
+    <body style="background-color: grey;">
+        <div class="headerContainer">
+            <div class="logoImage">
+                <img src="images/transparenticon.png" alt="Logo" id="logo">
+            </div>
+            <div class="headerText">
+                <h1>Weather</h1>
+            </div>
+            <div class="pageButtons">
+                    <a href="https://github.com/anshmehta7x/weather" target="_blank">
+                        <img src="images/githublogo.png" alt="Github" id="github">
+                    </a>
+                    <a href="https://www.weatherapi.com/" target="_blank">
+                        <img src="images/apilogo.png" alt="Weather API" id="weatherapi">
+                    </a>
+            </div>
+        </div>  
 
-                    <label id="errorLabel1" class="errorOutput"></label>
-                </div>
-                </div>
-            </div>
-            <div class="verticalLine"></div>
-            <div class="autoCoords">
-                <p><button class="btn" onclick=handleAutoClick()>Get current location</button></p>
-                
-                <div class="errorOutput">
-                    <label for="errorOutput" id="errorLabel2"></label>
-                </div>                
-            </div>
+        <div class="bodyContainer">
+            <h1>HIIIIIII</h1>
         </div>
-    </div>
     </body>
 </html>
