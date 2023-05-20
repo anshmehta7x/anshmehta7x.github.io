@@ -3,14 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            // Function to dynamically load CSS file
+            function loadCSS(file) {
+                var head = document.getElementsByTagName('head')[0];
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = file;
+                head.appendChild(link);
+            }
+    
+            // Check viewport width and load CSS accordingly
+            if (window.innerWidth <= 480) { // Adjust the width as needed
+                loadCSS('styles/mobile.css'); // CSS file for mobile devices
+            } else {
+                loadCSS('styles/desktop.css'); // CSS file for desktop devices
+            }
+        </script>
         <meta name="author" content="Ansh Mehta">
         <meta name="description" content="A weather app that uses location data to show accurate weather information with an attractive interface">
         <title>Weather</title>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/main.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet"> 
         <script src="scripts/main.js"></script>
     </head>
     <body style="background-color: grey;">
@@ -32,7 +50,24 @@
         </div>  
 
         <div class="bodyContainer">
-            <h1>HIIIIIII</h1>
+            <div class="detectLocation">
+                <label>Get location from browser</label>
+                <div style="width:100%;height:10px;"></div>
+                <button>Detect</button>
+            </div>
+            <hr>
+            <div class="searchCity">
+                
+                <label>Search for a city</label>
+                <div style="width:100%;height:10px;"></div>
+                <div class="searchContainer">
+                    <input type="text" id="cityInput" list="cityList"placeholder="Enter city name">
+                    <datalist id="cityList">
+                      </datalist>
+                    <button id="searchButton">→</button>
+                </div>
+            </div>
+
         </div>
     </body>
 </html>

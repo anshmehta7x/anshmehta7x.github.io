@@ -1,3 +1,49 @@
+const input = document.querySelector("input");
+var cities = [];
+window.addEventListener("load", function(){
+    console.log("Page Loaded");
+    fetch('../scripts/cities.json')
+    .then(response => response.json())
+    .then(data => {
+        cities = data;
+        const logCities = () => {
+            console.log(cities);
+        };
+        logCities();
+    });
+
+});
+var cityInput;
+var cityList;
+document.addEventListener("DOMContentLoaded", function() {
+    cityInput = document.getElementById("cityInput");
+    cityInput.addEventListener("input",suggestedCities);
+    cityList = document.getElementById("cityList");
+});
+
+
+function suggestedCities(d){
+    var count = 0;
+    const text = d.target.value;
+    while (cityList.firstChild) {
+        cityList.removeChild(cityList.firstChild);
+      }
+    
+    if(text.length == 0){
+        return;
+    }
+    
+    cities.forEach(element => {
+        if (count <= 4 && element.name.toLowerCase().startsWith(text.toLowerCase())) {
+            const option = document.createElement('option');
+            option.value = element.name;
+            cityList.appendChild(option);
+            count++;
+        } 
+    });
+}
+
+
 function checkCoordValidity(lat,lon){
     if(lat <= 90 && lat >=-90 && lon<=180 && lon >= -180){
         return true;

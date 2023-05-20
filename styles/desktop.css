@@ -1,0 +1,87 @@
+.headerContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.headerContainer img{
+    width: auto;
+    height: 10vh;
+}
+
+.headerText{
+    top:0;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Manrope', sans-serif;
+    font-size: 2vh;
+    color: #2a9ed2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pageButtons{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pageButtons img{
+    width: auto;
+    height: 5vh;
+    margin-left: 1vw;
+}
+
+.bodyContainer{
+    font-family: 'Oxygen', sans-serif;
+    color: #353535;
+    font-size: 10vh;
+    margin-top:10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.detectLocation, .searchCity{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    font-size: 10vh;
+    color: #353535;
+    background-color: grey;
+    border:1vh solid #353535;
+}
+
+button:hover, button:active{
+    background-color: #353535;
+    color: grey;
+}
+
+#cityInput{
+    font-size: 10vh;
+    color: #353535;
+    background-color: grey;
+    border:1vh solid #353535;
+}
+
+.searchContainer{
+    display: flex;
+    gap: 1vw;
+}
+
+#searchButton{
+    flex-grow: 1;
+    margin-left: auto;
+    width: auto;
+}
