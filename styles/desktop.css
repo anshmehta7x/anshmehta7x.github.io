@@ -85,3 +85,26 @@ button:hover, button:active{
     margin-left: auto;
     width: auto;
 }
+
+.errorContainer{
+    margin-top: 1vh;
+    color: red;
+}
+
+footer{
+    font-size: 1.5vh;
+    background-color: black;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    color: #2a9ed2;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#lastUpdate{
+    margin-left: auto;
+    margin-right: 0;
+}

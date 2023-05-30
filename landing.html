@@ -2,57 +2,63 @@
 <html lang="en-in">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            // Function to dynamically load CSS file
+            function loadCSS(file) {
+                var head = document.getElementsByTagName('head')[0];
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = file;
+                head.appendChild(link);
+            }
+    
+            // Check viewport width and load CSS accordingly
+            if (window.innerWidth <= 480) { // Adjust the width as needed
+                loadCSS('styles/landing_mobile.css'); // CSS file for mobile devices
+            } else {
+                loadCSS('styles/landing_desktop.css'); // CSS file for desktop devices
+            }
+        </script>
         <meta name="author" content="Ansh Mehta">
         <meta name="description" content="A weather app that uses location data to show accurate weather information with an attractive interface">
         <title>Weather</title>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/landing.css" type="text/css">
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet"> 
-        <script src="scripts/main.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet"> 
     </head>
-    <body>
-        <div class="navbar">
-            <a href="index.html">
-                <img src="images/transparenticon.png" id="CornerIcon">
-            </a>
-            <p id="heading">Weather<p>
-        </div>
-
-        <div class="container">
-
-        <div class="topgridLayout">
-            <!-- row 1-->
-            <div class="gridItem"></div>
-            <div class="gridItem" id="descriptionImageHolder"></div>
-            <div class="gridItem" id="tempDisplay">
-                <div class="gridItem" id="realTemp"><label id="realTempLabel"></label></div>
-                <div class="gridItem" id="feelsLike"><label id="feelslikeTempLabel"></label></div>
+    <body style="background-color: grey;">
+        <div class="headerContainer">
+            <div class="logoImage">
+                <a href="index.html"><img src="images/transparenticon.png" alt="Logo" id="logo"></a>
             </div>
-            <div class="gridItem"></div>
+            <div class="headerText">
+                <h1>Weather</h1>
+            </div>
+            <div class="pageButtons">
+                    <a href="https://github.com/anshmehta7x/weather" target="_blank">
+                        <img src="images/githublogo.png" alt="Github" id="github">
+                    </a>
+                    <a href="https://www.weatherapi.com/" target="_blank">
+                        <img src="images/apilogo.png" alt="Weather API" id="weatherapi">
+                    </a>
+            </div>
+        </div>  
 
-        </div>
-
-        <div class="weatherDescription">
-            <div class="gridItem" id="weatherDescriptionLabel">
-                <label id="weatherDescription"></label>
+        <div class="bodyContainer">
+            <div class="weatherDescription">
+                <div class="descriptionImageHolder">
+                </div>
+                <div class="descriptionTextHolder">
+                    <label id="descriptionLabel">HI</label>
             </div>
         </div>
-        <div class="Location">
-            <img src="images/location.png" class="gridItem" id="locationIcon">
-            <label class="gridItem" id="locationLabel"></label>
-        </div>
-        <div class="latlon">
-            <img src="images/coords.png" class="gridItem" id="latlonIcon">
-            <label class="gridItem" id="latlonLabel"></label>
-        </div>
-        <div class="localTime">
-            <img src="images/clock.png" class="gridItem" id="clockIcon">
-            <label class="gridItem" id="localTimeLabel"></label>
-        </div>
-    </div>
+        <footer>
+            <p>Created by Ansh Mehta</p>
+            <p id="lastUpdate">Last updated on : 21-5-2023</p>
+        </footer>
     </body>
 </html>
